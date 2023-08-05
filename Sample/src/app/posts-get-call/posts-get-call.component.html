@@ -1,0 +1,9 @@
+<p>GET REST API Call on Load works!</p>
+<input type="button" value="Load Posts" (click)="LoadPosts()" />
+<ul>
+    <li *ngFor="let post of posts">
+        {{post.id}}
+        {{post.title}}
+    </li>
+</ul>
+

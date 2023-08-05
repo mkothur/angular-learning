@@ -1,0 +1,25 @@
+<h2>{{title}}</h2>
+<p>{{topic}}</p>
+<input type="text" [(ngModel)]="inputValue"/>
+<input type="button" value="Add" (click)="HandleInputValues()" />
+<br/><br/>
+<table>
+    <tr>
+        <td>Input Values Are:</td>
+    </tr>
+    <tr *ngFor="let val of inputValuesArr ">
+        <td>{{val}}</td>
+    </tr>
+</table>
+<br/><br/>
+
+<input type="text" [(ngModel)]="dataBinding" />
+<p>Two Way Binding: {{dataBinding}}</p>
+<br/><br/>
+<b>{{counterExample}}</b><br/><br/>
+<p>Counter Value is: {{counter}}</p>
+<input type="button" value="++" (click)="HandleCounterClick('increment')" />
+<input type="button" value="--" (click)="HandleCounterClick('decrement')" />
+<input type="button" value="Reset" (click)="Reset()" />
+<h2 [style.color]="color" (click)="changeMyColor()">{{styleBinding}}</h2>
+
