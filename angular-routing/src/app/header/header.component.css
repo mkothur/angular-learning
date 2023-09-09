@@ -1,0 +1,21 @@
+header {
+    padding: 30px;
+    background-color: gainsboro;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+a {
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: black
+}
+
+a.active {
+    color: teal
+}

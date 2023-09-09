@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="heading">Model Driven (Reactive) Form Approach</div>
+  <div class="form-container">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="uname">Username</label>
+        <input type="text" class="form-control" id="uname" formControlName="uname" />
+        <small *ngIf="!myForm.get('uname').valid && myForm.get('uname').touched">Username is required</small>
+      </div>
+      <div class="form-group">
+        <label for="emailAddress">Email address</label>
+        <input type="email" class="form-control" id="emailAddress" formControlName="email" />
+        <small
+            *ngIf="
+                myForm.get('email').errors &&
+                myForm.get('email').errors.required &&
+                myForm.get('email').touched
+            "
+            >Email Address is required</small
+          >
+          <small
+            *ngIf="
+                myForm.get('email').errors &&
+                myForm.get('email').errors.email &&
+                myForm.get('email').touched
+            "
+            >Email Address should be valid</small
+          >
+      </div>
+      <div class="d-flex">
+        <div class="form-group" form-check>
+          <input type="checkbox" class="form-check-input" id="readTerms" formControlName="readTerms"/>
+          <label for="readTerms" class="form-check-label">
+            I have read terms & conditions
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Submit</button>
+      </div>
+    </form>
+  </div>
+  <ul *ngFor="let user of users">
+    <li>{{user.name}}</li>
+    <li>{{user.email}}</li>
+    <li>{{user.readTerms}}</li>
+  </ul>
+</div>
