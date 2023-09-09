@@ -1,0 +1,82 @@
+<h1>{{title | titlecase}}</h1>
+<app-header [textProp]="parentProp" (onChildHasData)="showChildData($event)"></app-header>
+<p>{{childProp}}</p>
+<h3>{{stringInterpolation}}</h3>
+{{date}}
+{{time}}
+{{count+1}}
+<h3>{{propertyBinding}}</h3>
+<button [disabled]=isdisabled>Click</button>
+<h3>{{classBinding}}</h3>
+<h2 [class]="isactive ? 'active' : 'inactive'">Class</h2>
+<h3 [style]="{color: colorVar}">{{styleBinding}}</h3>
+<h3>{{eventBinding}}</h3>
+<h2>Count: {{counter}}</h2>
+<button (click)="increment()">Increment</button><br/><br/>
+<input type="text" (input)="handleChange($event)" />
+<h2>Input: {{name}}</h2>
+<h3>{{twoWayBinding}}</h3>
+<input type="text" [(ngModel)]="course" />
+<input type="button" value="Click" (click)= "handleClick()" /><br/><br/>
+<b>course is: {{course}}</b><br/><br/>
+<table>
+  <tr>
+    <td>
+      <b>Courses Are:</b>
+    </td>
+  </tr>
+  <tr *ngFor="let course of courses">
+     <td>
+       {{course}}
+     </td>
+  </tr>
+</table>
+<h3>Directives</h3>
+<h2 *ngIf="show">Show using *ngIf</h2>
+<h2>Using *ngFor</h2>
+<table>
+  <tr *ngFor="let fruit of fruits">
+    <td>
+      {{fruit}}
+    </td>
+  </tr>
+</table>
+<h2>Pipes</h2>
+<h1>{{titlePipe | uppercase}}</h1>
+<h2>Custom Pipe</h2>
+<h3>{{personObj | test:greet}}</h3>
+<h2>Template Reference Variable</h2>
+<input type="text" name="" id="" value="example@email.com" #temp>
+<button (click)="updateEmail(temp.value)">Update</button>
+<p>{{email}}</p>
+<app-counter #couterChild></app-counter>
+<p>Child prop accessing in Parent using Template Reference Variable:{{couterChild.counterProp}}</p>
+<p>Child prop accessing in Parent using Template Reference Variable:{{couterChild.counter}}</p>
+<button (click)="getChildData()">Use ViewChild</button>
+<p>Data from Child: {{childComponentProp}}</p>
+<app-child></app-child><br/><br/>
+
+<div #domRef>DOM Manipulation Demo</div><br/>
+<button (click)="ChangeDiv()">Change Div Color</button><br/><br/>
+
+First Name: <input type="text" [(ngModel)]="firstName" />
+<p>{{firstName}}</p>
+<button (click)="getFirstName()">Get First name</button>
+<br/><br/>
+LastName: <input type="text" value="lastname" #lastName />
+<button (click)="getLastName(lastName.value)">Get Last name</button><br/><br>
+
+<input type="text" id="username" name="username" #username />
+<button type="button" (click)="clickme()">Clickme</button>
+<p Highlight>Custom Directive</p>
+
+<app-parent></app-parent>
+
+
+<ul class="list-group">
+  <li 
+      *ngFor="let post of posts"
+      class="list-group-item">
+      {{ post.title }}
+  </li>
+</ul>

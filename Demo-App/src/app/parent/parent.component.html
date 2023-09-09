@@ -1,0 +1,7 @@
+<p>parent works!</p>
+<button (click)="toggleChild()">Toggle Child</button>
+<input type="text" [(ngModel)]="channelName">
+<app-child-one *ngIf="isChild" [channelName]="channelName">
+    <h2 #projectedContent>Please subscribe</h2>
+</app-child-one>
+
