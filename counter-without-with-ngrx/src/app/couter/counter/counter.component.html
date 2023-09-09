@@ -1,0 +1,32 @@
+<div class="row">
+    <h2 class="my-2">{{subTitle}}</h2>
+    <div class="col-md-8">
+      <div class="my-1">
+        <app-counter-output [counter]="counter"></app-counter-output>
+      </div>
+      <div class="my-3">
+        <app-counter-buttons
+          (increment)="onIncrement()"
+          (decrement)="onDecrement()"
+          (reset)="onReset()"
+        ></app-counter-buttons>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="my-0">
+        <h2>{{countService.subTitle}}</h2>
+        <h3>Count is: <b>{{countService.count}}</b></h3> 
+        <button  class="btn btn-primary" (click)="handleIncrement()">Increment</button>&nbsp;
+        <button  class="btn btn-warning" (click)="handleDecrement()">Decrement</button>&nbsp;
+        <button  class="btn btn-info" (click)="handleReset()">Reset</button>
+      </div>
+    </div> 
+</div>
+
+<!-- <div>
+  <h2>{{countService.subTitle}}</h2>
+ <h3>Count is: <b>{{countService.count}}</b></h3> 
+ <button  class="btn btn-primary" (click)="handleIncrement()">Increment</button>&nbsp;
+ <button  class="btn btn-warning" (click)="handleDecrement()">Decrement</button>&nbsp;
+ <button  class="btn btn-info" (click)="handleReset()">Reset</button>
+</div>  -->
