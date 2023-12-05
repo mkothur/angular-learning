@@ -11,6 +11,8 @@ import { ChildComponent } from './child/child.component';
 import { HighlightDirective } from './highlight.directive';
 import { ParentComponent } from './parent/parent.component';
 import { ChildOneComponent } from './child-one/child-one.component';
+import { InlineEditingOneComponent } from './inline-editing-one/inline-editing-one.component';
+import { InlineEditingtwoComponent } from './inline-editingtwo/inline-editingtwo.component';
 
 @NgModule({
   declarations: [	
@@ -22,6 +24,8 @@ import { ChildOneComponent } from './child-one/child-one.component';
     HighlightDirective,
     ParentComponent,
     ChildOneComponent,
+    InlineEditingOneComponent,
+    InlineEditingtwoComponent,
   ],
   imports: [
     BrowserModule,
